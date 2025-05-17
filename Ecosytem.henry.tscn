@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqmuhnmus7rbc"]
+
+[ext_resource type="Texture2D" uid="uid://cqqj415ykka3v" path="res://pixil-frame-0.png" id="1_ftexy"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://kenneyUI-green.tres" id="3_on1t5"]
+[ext_resource type="Script" uid="uid://2dep06se6qn4" path="res://cont.gd" id="4_oi13i"]
+[ext_resource type="PackedScene" uid="uid://b4y5drsmvb3h1" path="res://menu.tscn" id="5_avbdd"]
+[ext_resource type="Script" uid="uid://bf0syw3qclu64" path="res://hippolofi.gd" id="6_o8pu2"]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2(0, 8)
+metadata/_edit_horizontal_guides_ = [64.0]
+
+[node name="Pixil-frame-0" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(575.499, 256)
+scale = Vector2(18.0157, 8)
+texture = ExtResource("1_ftexy")
+
+[node name="cont" type="Button" parent="."]
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 649.251
+theme = ExtResource("3_on1t5")
+theme_override_font_sizes/font_size = 100
+text = "Continue"
+script = ExtResource("4_oi13i")
+next_scene = ExtResource("5_avbdd")
+
+[node name="hippolofi" type="AudioStreamPlayer2D" parent="."]
+script = ExtResource("6_o8pu2")
+
+[connection signal="pressed" from="cont" to="cont" method="_on_pressed"]
+[connection signal="pressed" from="cont" to="hippolofi" method="_on_cont_pressed"]

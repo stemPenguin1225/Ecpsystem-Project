@@ -1,0 +1,313 @@
+[gd_scene load_steps=5 format=3 uid="uid://bfnif2v58seoe"]
+
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://kenneyUI-green.tres" id="1_cov5b"]
+[ext_resource type="Script" uid="uid://1uaxqm6p8vcg" path="res://back_button.gd" id="2_0ii6v"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://kenneyUI.tres" id="3_lewbk"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://kenneyUI-red.tres" id="4_q4d7d"]
+
+[node name="New game menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -141.0
+offset_top = -146.0
+offset_right = 1212.0
+offset_bottom = 765.0
+
+[node name="BackButton" type="Button" parent="ColorRect"]
+layout_mode = 0
+offset_left = 268.0
+offset_top = 159.0
+offset_right = 323.0
+offset_bottom = 227.251
+theme = ExtResource("1_cov5b")
+theme_override_font_sizes/font_size = 32
+text = "←"
+script = ExtResource("2_0ii6v")
+
+[node name="Load game" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 467.0
+offset_top = 145.0
+offset_right = 982.0
+offset_bottom = 276.0
+theme = ExtResource("1_cov5b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "Load Game"
+
+[node name="Linesforloadgame" type="Line2D" parent="ColorRect"]
+texture_filter = 1
+position = Vector2(124, 369)
+points = PackedVector2Array(-9, 247, 1229, 247)
+default_color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="Line2D2" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(8, -216)
+points = PackedVector2Array(-9, 247, 1229, 247)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D4" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(-16, -48)
+points = PackedVector2Array(-9, 247, 1229, 247)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D5" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(0, -104)
+points = PackedVector2Array(-9, 247, 1229, 247)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D6" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(689, 49)
+scale = Vector2(1.01596, 1)
+points = PackedVector2Array(28.6215, -82, 28.6215, 198)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D7" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(397, 54)
+scale = Vector2(1.00795, 1)
+points = PackedVector2Array(28.6215, -82, 28.6215, 198)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(16, -160)
+points = PackedVector2Array(-9, 247, 1229, 247)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Line2D3" type="Line2D" parent="ColorRect/Linesforloadgame"]
+texture_filter = 1
+position = Vector2(946, -32)
+points = PackedVector2Array(-9, 281, -9, 2)
+default_color = Color(0, 0, 0, 1)
+
+[node name="Save name" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 175.0
+offset_top = 353.0
+offset_right = 533.0
+offset_bottom = 410.0
+theme = ExtResource("1_cov5b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Save name"
+
+[node name="Gameslot1" type="LineEdit" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 56.0
+offset_right = 361.0
+offset_bottom = 95.4343
+theme = ExtResource("3_lewbk")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+placeholder_text = "(no game saved in this slot)"
+editable = false
+
+[node name="Gameslot2" type="LineEdit" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 112.0
+offset_right = 360.0
+offset_bottom = 151.434
+theme = ExtResource("3_lewbk")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+placeholder_text = "(no game saved in this slot)"
+editable = false
+
+[node name="Gameslot3" type="LineEdit" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 168.0
+offset_right = 360.0
+offset_bottom = 207.434
+theme = ExtResource("3_lewbk")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+placeholder_text = "(no game saved in this slot)"
+editable = false
+
+[node name="Save1editname" type="Button" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 54.0
+offset_right = 16.324
+offset_bottom = 96.251
+theme = ExtResource("1_cov5b")
+disabled = true
+text = "✏️"
+
+[node name="Gameslot4" type="LineEdit" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 220.0
+offset_right = 359.0
+offset_bottom = 259.434
+theme = ExtResource("3_lewbk")
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 1)
+placeholder_text = "(no game saved in this slot)"
+editable = false
+
+[node name="Save2editname" type="Button" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 111.0
+offset_right = 16.3241
+offset_bottom = 153.251
+theme = ExtResource("1_cov5b")
+disabled = true
+text = "✏️"
+
+[node name="Save3editname" type="Button" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = 166.0
+offset_right = 15.3241
+offset_bottom = 208.251
+theme = ExtResource("1_cov5b")
+disabled = true
+text = "✏️"
+
+[node name="Save4editname" type="Button" parent="ColorRect/Save name"]
+layout_mode = 0
+offset_left = -29.0
+offset_top = 220.0
+offset_right = 14.3241
+offset_bottom = 262.251
+theme = ExtResource("1_cov5b")
+disabled = true
+text = "✏️"
+
+[node name="Contsamegame" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 851.0
+offset_top = 321.0
+offset_right = 1066.0
+offset_bottom = 394.0
+theme = ExtResource("1_cov5b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "continue
+game"
+
+[node name="contgame1" type="Button" parent="ColorRect/Contsamegame"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 83.0
+offset_right = 195.0
+offset_bottom = 130.251
+theme = ExtResource("1_cov5b")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Continue!"
+
+[node name="contgame2" type="Button" parent="ColorRect/Contsamegame"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 140.0
+offset_right = 195.0
+offset_bottom = 187.251
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Continue!"
+
+[node name="contgame3" type="Button" parent="ColorRect/Contsamegame"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 196.0
+offset_right = 195.0
+offset_bottom = 243.251
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Continue!"
+
+[node name="contgame4" type="Button" parent="ColorRect/Contsamegame"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 249.0
+offset_right = 190.0
+offset_bottom = 296.251
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "Continue!"
+
+[node name="Playnewgame" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 557.0
+offset_top = 354.0
+offset_right = 925.0
+offset_bottom = 395.0
+theme = ExtResource("1_cov5b")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 27
+text = "play new game"
+
+[node name="DELETEgame" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1074.0
+offset_top = 343.0
+offset_right = 1143.0
+offset_bottom = 400.0
+theme = ExtResource("1_cov5b")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "🗑️"
+
+[node name="DELETEgame1" type="Button" parent="ColorRect/DELETEgame"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = 63.0
+offset_right = 41.3241
+offset_bottom = 110.251
+theme = ExtResource("4_q4d7d")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "🗑️"
+
+[node name="DELETEgame2" type="Button" parent="ColorRect/DELETEgame"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = 118.0
+offset_right = 42.3241
+offset_bottom = 165.251
+theme = ExtResource("4_q4d7d")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "🗑️"
+
+[node name="DELETEgame3" type="Button" parent="ColorRect/DELETEgame"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 174.0
+offset_right = 39.3241
+offset_bottom = 221.251
+theme = ExtResource("4_q4d7d")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "🗑️"
+
+[node name="DELETEgame4" type="Button" parent="ColorRect/DELETEgame"]
+layout_mode = 0
+offset_left = -10.0
+offset_top = 226.0
+offset_right = 39.3241
+offset_bottom = 273.251
+theme = ExtResource("4_q4d7d")
+theme_override_font_sizes/font_size = 20
+disabled = true
+text = "🗑️"
+
+[connection signal="pressed" from="ColorRect/BackButton" to="ColorRect/BackButton" method="_on_pressed"]

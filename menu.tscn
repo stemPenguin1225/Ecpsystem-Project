@@ -1,0 +1,121 @@
+[gd_scene load_steps=11 format=3 uid="uid://b4y5drsmvb3h1"]
+
+[ext_resource type="Texture2D" uid="uid://cubyqqg3k2yvn" path="res://menupicture.png" id="1_uc231"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://kenneyUI-green.tres" id="2_5d36j"]
+[ext_resource type="Script" uid="uid://dslurgiw7lpbl" path="res://sound.gd" id="5_hl40x"]
+[ext_resource type="Texture2D" uid="uid://c4e40k7tmmmj1" path="res://sr2cf825bdbb3aws3.png" id="6_4uisd"]
+[ext_resource type="Script" uid="uid://dskccq4n2xx7f" path="res://settings.gd" id="6_qukhw"]
+[ext_resource type="Script" uid="uid://c5n5u4s58qqld" path="res://new_game.gd" id="7_u4naf"]
+[ext_resource type="Script" uid="uid://dkg2hennsnidp" path="res://exit_settings.gd" id="9_3261r"]
+[ext_resource type="Script" uid="uid://bf0syw3qclu64" path="res://hippolofi.gd" id="9_t473e"]
+[ext_resource type="Script" uid="uid://nd06c7xi2xob" path="res://load_game.gd" id="10_xaq1m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rc1j3"]
+
+[node name="menu" type="Node2D"]
+
+[node name="Menupicture" type="Sprite2D" parent="."]
+modulate = Color(0.933333, 1, 1, 1)
+texture_filter = 1
+position = Vector2(576, 324)
+scale = Vector2(11.52, 6.48)
+texture = ExtResource("1_uc231")
+metadata/_edit_lock_ = true
+
+[node name="Settings" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = 37.0
+offset_top = 64.0
+offset_right = 1061.0
+offset_bottom = 576.0
+
+[node name="Exit settings" type="Button" parent="Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.125
+anchor_bottom = 0.03
+offset_left = 933.0
+offset_top = 15.0
+offset_right = 878.0
+offset_bottom = 70.64
+theme = ExtResource("2_5d36j")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_rc1j3")
+text = "🗙"
+script = ExtResource("9_3261r")
+
+[node name="Sr2Cf825Bdbb3Aws4" type="Sprite2D" parent="Settings"]
+position = Vector2(626.25, 64.75)
+scale = Vector2(0.244643, 0.188616)
+texture = ExtResource("6_4uisd")
+
+[node name="Master Volume" type="Label" parent="Settings"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 23.0
+offset_right = 246.0
+offset_bottom = 46.0
+theme = ExtResource("2_5d36j")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Master volume"
+
+[node name="Master Volume key" type="Label" parent="Settings/Master Volume"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 22.0
+offset_right = 221.0
+offset_bottom = 45.0
+theme = ExtResource("2_5d36j")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0%                     50%                100%"
+
+[node name="sound" type="HSlider" parent="Settings/Master Volume"]
+z_index = 6
+layout_mode = 0
+offset_left = -30.0
+offset_top = 46.0
+offset_right = 206.0
+offset_bottom = 88.0
+theme = ExtResource("2_5d36j")
+script = ExtResource("5_hl40x")
+
+[node name="settings" type="Button" parent="."]
+offset_left = 466.0
+offset_top = 392.0
+offset_right = 619.0
+offset_bottom = 479.0
+scale = Vector2(1.03207, 1)
+theme = ExtResource("2_5d36j")
+text = "Settings"
+script = ExtResource("6_qukhw")
+
+[node name="New game" type="Button" parent="."]
+offset_left = 52.0
+offset_top = 164.0
+offset_right = 214.0
+offset_bottom = 263.0
+theme = ExtResource("2_5d36j")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "New"
+script = ExtResource("7_u4naf")
+
+[node name="hippolofi" type="AudioStreamPlayer2D" parent="."]
+autoplay = true
+script = ExtResource("9_t473e")
+
+[node name="Load game" type="Button" parent="."]
+offset_left = 868.0
+offset_top = 156.0
+offset_right = 1030.0
+offset_bottom = 255.0
+theme = ExtResource("2_5d36j")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Load Game"
+script = ExtResource("10_xaq1m")
+
+[connection signal="pressed" from="Settings/Exit settings" to="Settings/Exit settings" method="_on_pressed"]
+[connection signal="value_changed" from="Settings/Master Volume/sound" to="Settings/Master Volume/sound" method="_on_value_changed"]
+[connection signal="pressed" from="settings" to="settings" method="_on_pressed"]
+[connection signal="pressed" from="New game" to="New game" method="_on_pressed"]
+[connection signal="pressed" from="Load game" to="Load game" method="_on_pressed"]

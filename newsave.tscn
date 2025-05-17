@@ -1,0 +1,118 @@
+[gd_scene load_steps=10 format=3 uid="uid://bh8lh5tynlip8"]
+
+[ext_resource type="Script" path="res://newsave.gd" id="1_0y7qu"]
+[ext_resource type="Script" path="res://label.gd" id="1_mnvdx"]
+[ext_resource type="Texture2D" uid="uid://irx7l3sb6gjy" path="res://newspritesheet-removebg-preview.png" id="1_qpx06"]
+[ext_resource type="Theme" uid="uid://fkhf6hbgij3a" path="res://lightmode.tres" id="2_ao85k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yg1gb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o5gj"]
+atlas = ExtResource("1_qpx06")
+region = Rect2(0, 0, 316, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_poe6b"]
+atlas = ExtResource("1_qpx06")
+region = Rect2(316, 0, 316, 158)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0jpe"]
+atlas = ExtResource("1_qpx06")
+region = Rect2(632, 0, 316, 158)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pjxlw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o5gj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_poe6b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e0jpe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="New" type="Node2D"]
+script = ExtResource("1_0y7qu")
+metadata/_edit_vertical_guides_ = [-137.0]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.16446, 0.16446, 0.16446, 1)
+metadata/_edit_lock_ = true
+
+[node name="Back button" type="Button" parent="."]
+offset_left = 196.0
+offset_top = 1.0
+offset_right = 290.0
+offset_bottom = 97.0
+theme = ExtResource("2_ao85k")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yg1gb")
+text = "←"
+flat = true
+script = ExtResource("1_mnvdx")
+
+[node name="Label3" type="Label" parent="Back button"]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 11.0
+offset_right = 74.0
+offset_bottom = 34.0
+text = "Menu"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(540, 111)
+sprite_frames = SubResource("SpriteFrames_pjxlw")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 104.0
+offset_top = 191.0
+offset_right = 366.0
+offset_bottom = 260.0
+theme_override_font_sizes/font_size = 50
+text = "Save name"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 116.0
+offset_top = 280.0
+offset_right = 361.0
+offset_bottom = 318.0
+placeholder_text = "untitled"
+
+[node name="game #" type="Label" parent="."]
+offset_left = 802.0
+offset_top = 202.0
+offset_right = 976.0
+offset_bottom = 271.0
+theme_override_font_sizes/font_size = 50
+text = "Game#"
+
+[node name="Label4" type="Label" parent="game #"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 210.0
+offset_right = 166.0
+offset_bottom = 239.0
+text = "More coming soon!"
+
+[node name="MenuButton" type="MenuButton" parent="game #"]
+layout_mode = 0
+offset_left = -48.0
+offset_top = 73.0
+offset_right = 276.0
+offset_bottom = 199.0
+theme_override_font_sizes/font_size = 50
+text = "Pick a game!"
+flat = false
+item_count = 2
+popup/item_0/text = "game 1"
+popup/item_1/text = "game 2"
+popup/item_1/id = 1
+
+[connection signal="pressed" from="Back button" to="Back button" method="_on_pressed"]

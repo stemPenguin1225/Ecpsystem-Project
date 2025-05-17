@@ -1,0 +1,162 @@
+[gd_scene load_steps=7 format=3 uid="uid://bomuo8ak3nihp"]
+
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://kenneyUI-green.tres" id="1_hy3a7"]
+[ext_resource type="Script" uid="uid://1uaxqm6p8vcg" path="res://back_button.gd" id="2_5eenp"]
+[ext_resource type="Script" uid="uid://cqqqbd42frjfw" path="res://Makegame.gd" id="2_ll2c7"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://kenneyUI-red.tres" id="2_s082e"]
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://kenneyUI.tres" id="4_sdjpt"]
+[ext_resource type="FontFile" uid="uid://d28eu0vmww8qm" path="res://Godot-Fontpack-d244bf6170b399a6d4d26a0d906058ddf2dafdf1/fonts/source-code-pro/source-code-pro-2.010R-ro-1.030R-it/TTF/SourceCodePro-Medium.ttf" id="6_rw3bl"]
+
+[node name="New game menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="ChapterRelated" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -205.0
+offset_top = -29.0
+offset_right = -67.0
+offset_bottom = 29.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="pickyochapter" type="Label" parent="ChapterRelated"]
+layout_mode = 2
+theme = ExtResource("1_hy3a7")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Pick Your Chapter"
+horizontal_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="ChapterRelated"]
+layout_mode = 2
+theme = ExtResource("1_hy3a7")
+item_count = 2
+popup/item_0/text = "Chapter 1"
+popup/item_0/id = 0
+popup/item_1/text = "1 millon coming Soon!"
+popup/item_1/id = 1
+popup/item_1/disabled = true
+
+[node name="Error" type="Label" parent="ChapterRelated"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_s082e")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Warning - Game not specified"
+
+[node name="BackButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 154.0
+offset_top = 11.0
+offset_right = 209.0
+offset_bottom = 64.0
+theme = ExtResource("1_hy3a7")
+theme_override_font_sizes/font_size = 32
+text = "←"
+script = ExtResource("2_5eenp")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -190.0
+offset_right = 190.0
+offset_bottom = 99.0
+grow_horizontal = 2
+theme = ExtResource("4_sdjpt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 72
+text = "New Game"
+
+[node name="NameRelated" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -961.0
+offset_top = -54.0
+offset_right = -719.0
+offset_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 2
+
+[node name="Name yo save!" type="LineEdit" parent="NameRelated"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme = ExtResource("1_hy3a7")
+placeholder_text = "Name your save!"
+
+[node name="Error" type="Label" parent="NameRelated"]
+visible = false
+layout_mode = 2
+theme = ExtResource("2_s082e")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+text = "Warning - name not specified"
+
+[node name="Make game" type="Button" parent="."]
+layout_mode = 2
+offset_left = 440.0
+offset_top = 531.0
+offset_right = 766.0
+offset_bottom = 619.0
+theme = ExtResource("1_hy3a7")
+theme_override_font_sizes/font_size = 50
+text = "Make Game"
+script = ExtResource("2_ll2c7")
+
+[node name="Feedback good" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 13.0
+offset_top = 623.0
+offset_right = 1151.0
+offset_bottom = 642.0
+theme = ExtResource("4_sdjpt")
+theme_override_colors/font_color = Color(0.45098, 0.803922, 0.294118, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 14
+text = "Yahooo! File created sucessfuly! loading...*"
+
+[node name="feedbackgood_fine print" type="Label" parent="Feedback good"]
+layout_mode = 0
+offset_left = 434.0
+offset_top = 5.0
+offset_right = 955.0
+offset_bottom = 23.0
+theme = ExtResource("4_sdjpt")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_rw3bl")
+theme_override_font_sizes/font_size = 7
+text = " * note that your file may not be created due to various reasons. see our help page for more details"
+
+[node name="Feedback bad" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 13.0
+offset_top = 622.0
+offset_right = 787.0
+offset_bottom = 641.0
+theme = ExtResource("2_s082e")
+theme_override_colors/font_color = Color(0.909804, 0.415686, 0.0901961, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+text = "The name already exists! See our help page for more details. ERR XXX"
+
+[connection signal="pressed" from="BackButton" to="BackButton" method="_on_pressed"]
+[connection signal="pressed" from="Make game" to="Make game" method="_on_pressed"]

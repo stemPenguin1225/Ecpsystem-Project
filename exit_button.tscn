@@ -1,0 +1,187 @@
+[gd_scene load_steps=14 format=3 uid="uid://cdi8ho43ooxye"]
+
+[ext_resource type="Theme" uid="uid://6shp5ck1tnja" path="res://kenneyUI.tres" id="1_0qvee"]
+[ext_resource type="Script" uid="uid://bum0lqju0mb8f" path="res://texture_button.gd" id="2_nag18"]
+[ext_resource type="Script" uid="uid://d00q3acu0p8ke" path="res://exit_options.gd" id="3_if8bg"]
+[ext_resource type="Theme" uid="uid://bnhngmri4tfgr" path="res://kenneyUI-green.tres" id="3_q5vv8"]
+[ext_resource type="Script" uid="uid://dkg2hennsnidp" path="res://exit_settings.gd" id="4_crb6g"]
+[ext_resource type="Script" uid="uid://va8d831pnjwo" path="res://settingsoptionsbutton.gd" id="4_dvvyi"]
+[ext_resource type="Script" uid="uid://dslurgiw7lpbl" path="res://sound.gd" id="5_j33tp"]
+[ext_resource type="Texture2D" uid="uid://c4e40k7tmmmj1" path="res://sr2cf825bdbb3aws3.png" id="6_1yopo"]
+[ext_resource type="Theme" uid="uid://mbsg4xqnedxi" path="res://kenneyUI-red.tres" id="6_lrinq"]
+[ext_resource type="Theme" uid="uid://bb6vwl0h1flws" path="res://kenneyUI-blue.tres" id="7_es1d0"]
+[ext_resource type="Script" uid="uid://csrmd6kowxr62" path="res://dont_save_and_exit_button.gd" id="7_lrinq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u7qsp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g1q3m"]
+
+[node name="Exit button" type="CanvasLayer"]
+
+[node name="ExitButton" type="Button" parent="."]
+offset_right = 56.0
+offset_bottom = 78.0
+theme = ExtResource("1_0qvee")
+text = "Pause"
+flat = true
+script = ExtResource("2_nag18")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 8.0
+offset_bottom = 8.0
+mouse_filter = 2
+
+[node name="Options menu" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 230.0
+offset_top = 134.0
+offset_right = 832.0
+offset_bottom = 480.0
+
+[node name="options menu label" type="Label" parent="Control/Options menu"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 26.0
+offset_right = 402.0
+offset_bottom = 61.0
+theme = ExtResource("3_q5vv8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Exit options" type="Button" parent="Control/Options menu"]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 10.0
+offset_right = 594.0
+offset_bottom = 63.0
+theme = ExtResource("1_0qvee")
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_disabled_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_normal_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_u7qsp")
+text = "✖"
+script = ExtResource("3_if8bg")
+
+[node name="Settingsoptionsbutton" type="Button" parent="Control/Options menu"]
+layout_mode = 0
+offset_left = 242.0
+offset_top = 74.0
+offset_right = 406.0
+offset_bottom = 120.0
+theme = ExtResource("1_0qvee")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Settings"
+script = ExtResource("4_dvvyi")
+
+[node name="Border" type="ColorRect" parent="Control/Options menu"]
+z_index = -1
+layout_mode = 0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 610.0
+offset_bottom = 354.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="dont_save_and_exit Button" type="Button" parent="Control/Options menu"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 130.0
+offset_right = 432.324
+offset_bottom = 176.0
+theme = ExtResource("6_lrinq")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Don't Save and exit"
+script = ExtResource("7_lrinq")
+
+[node name="save_and_exit Button" type="Button" parent="Control/Options menu"]
+layout_mode = 0
+offset_left = 202.0
+offset_top = 186.0
+offset_right = 432.324
+offset_bottom = 232.0
+theme = ExtResource("7_es1d0")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+disabled = true
+text = "Save and exit"
+
+[node name="Settings" type="ColorRect" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 37.0
+offset_top = 64.0
+offset_right = 1061.0
+offset_bottom = 576.0
+
+[node name="Exit settings_fromexmenu" type="Button" parent="Control/Settings"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.125
+anchor_bottom = 0.03
+offset_left = 947.0
+offset_top = 8.0
+offset_right = 890.324
+offset_bottom = 83.891
+theme = ExtResource("3_q5vv8")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g1q3m")
+text = "🗙"
+script = ExtResource("4_crb6g")
+
+[node name="Sr2Cf825Bdbb3Aws4" type="Sprite2D" parent="Control/Settings"]
+position = Vector2(626.25, 64.75)
+scale = Vector2(0.244643, 0.188616)
+texture = ExtResource("6_1yopo")
+
+[node name="Master Volume" type="Label" parent="Control/Settings"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 23.0
+offset_right = 246.0
+offset_bottom = 46.0
+theme = ExtResource("3_q5vv8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Master volume"
+
+[node name="Master Volume key" type="Label" parent="Control/Settings/Master Volume"]
+layout_mode = 0
+offset_left = -35.0
+offset_top = 22.0
+offset_right = 221.0
+offset_bottom = 45.0
+theme = ExtResource("3_q5vv8")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "0%                     50%                100%"
+
+[node name="sound" type="HSlider" parent="Control/Settings/Master Volume"]
+z_index = 6
+layout_mode = 0
+offset_left = -30.0
+offset_top = 46.0
+offset_right = 206.0
+offset_bottom = 88.0
+theme = ExtResource("3_q5vv8")
+script = ExtResource("5_j33tp")
+
+[connection signal="pressed" from="ExitButton" to="ExitButton" method="_on_pressed"]
+[connection signal="pressed" from="Control/Options menu/Exit options" to="Control/Options menu/Exit options" method="_on_pressed"]
+[connection signal="pressed" from="Control/Options menu/Settingsoptionsbutton" to="Control/Options menu/Settingsoptionsbutton" method="_on_pressed"]
+[connection signal="pressed" from="Control/Options menu/dont_save_and_exit Button" to="Control/Options menu/dont_save_and_exit Button" method="_on_pressed"]
+[connection signal="pressed" from="Control/Settings/Exit settings_fromexmenu" to="Control/Settings/Exit settings_fromexmenu" method="_on_pressed"]
+[connection signal="value_changed" from="Control/Settings/Master Volume/sound" to="Control/Settings/Master Volume/sound" method="_on_value_changed"]
